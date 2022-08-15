@@ -1,0 +1,30 @@
+sbgc201510
+
+
+====================
+SELECT Status, COUNT(*) AS Quantidade
+FROM ReworkSalcomp
+GROUP BY Status
+ORDER BY COUNT(*) DESC
+================
+SELECT Status, COUNT(*) AS Quantidade FROM ReworkSalcomp GROUP BY Status ORDER BY COUNT(*) DESC
+
+
+SELECT Hour(TestTime) AS Hora
+FROM t_TestData
+GROUP BY Hour(TestTime) AS Hora;
+
+SELECT DCount("ProductName","TestIsPass","TestIsPass=PASS") AS Expr1 
+FROM t_TestData
+GROUP BY DCount(ProductName","TestIsPass","TestIsPass=PASS");
+
+SELECT        IdUser, Nome, Matricula, Senha, Perfil, Foto, Status
+FROM            Usuario
+WHERE        (Matricula = ?) AND (Senha = ?)
+
+SELECT Usuario.[Usuario], Usuario.[Senha]
+FROM Usuario
+WHERE        (Matricula = ?) AND (Senha = ?);
+
+
+INSERT INTO `ReworkSalcomp` (`TimeStamp`, `SerialSalcomp`, `SerialVendor`, `Carrier`, `Usuario`, `Data`, `Hora`, `Resultado`, `Turno`, `Estaçao`, `Modelo`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
